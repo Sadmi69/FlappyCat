@@ -1,0 +1,19 @@
+// mainTemplate.gradle
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+// Automatically accept SDK licenses
+afterEvaluate {
+    project ->
+        if (project.hasProperty("android")) {
+            android {
+                compileSdkVersion 33
+                ...
+            }
+        }
+}
